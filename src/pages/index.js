@@ -5,7 +5,11 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const BlogIndex = ({ data, location }) => {
+import Header from "../components/Structure/Header"
+import Footer from "../components/Structure/Footer"
+import Main from "../components/Structure/Content/Main"
+
+/* const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
@@ -61,6 +65,16 @@ const BlogIndex = ({ data, location }) => {
       </ol>
     </Layout>
   )
+} */
+
+const BlogIndex =()=>{
+  return(
+    <>
+      <Header/>
+      <Main/>
+      <Footer/>
+    </>
+  );
 }
 
 export default BlogIndex
