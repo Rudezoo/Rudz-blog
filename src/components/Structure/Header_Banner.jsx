@@ -1,15 +1,37 @@
 import React from 'react';
 import '../../design/css/Header.scss'
 
-const Header_Banner=()=>{
+const Header_Banner = () => {
     return (
         <>
             <div className="Header_Banner">
                 <div className="Bgpicture">
-
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
                 <div className="Mention">
-                    Welcome to My Blog
+                    <div>
+                        Welcome to Rudz
+                    </div>
+                   
                 </div>
             </div>
         </>

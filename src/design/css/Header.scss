@@ -1,3 +1,15 @@
+@mixin dots($count) {
+    $text-shadow: ();
+    @for $i from 0 through $count {
+      $text-shadow: $text-shadow,
+                   (-.5+(random()) * 3) + em
+                   (-.5+(random()) * 3) + em
+                   7px
+                   hsla(random() * 360, 100%, 50%,.9);
+    }
+    text-shadow: $text-shadow;
+  }
+
 .Header{
     width: 100%;
     display: flex;
@@ -9,37 +21,139 @@
 
 .Header_Banner{    
     width: 100%;
-    height: 70vh;
+    height: 50vh;
+
+    position: relative;
+    
 }
 
 .Bgpicture{
-
-    height: 100%; 
+    
+    /* height: 100%; 
     background-image: url('../../image/example.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 1;
     filter: blur(2px);
-    -webkit-filter: blur(2px);
+    -webkit-filter: blur(2px); */
+
+    /* height: 50vh;
+	
+	width: 100%;
+	background-color: hsla(200,40%,30%,.4);
+	background-image:		
+		url('https://78.media.tumblr.com/cae86e76225a25b17332dfc9cf8b1121/tumblr_p7n8kqHMuD1uy4lhuo1_540.png'), 
+		url('https://78.media.tumblr.com/66445d34fe560351d474af69ef3f2fb0/tumblr_p7n908E1Jb1uy4lhuo1_1280.png'),
+		url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),
+		url('https://78.media.tumblr.com/5ecb41b654f4e8878f59445b948ede50/tumblr_p7n8on19cV1uy4lhuo1_1280.png'),
+		url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png');
+	background-repeat: repeat-x;
+	background-position: 
+		0 20%,
+		0 100%,
+		0 50%,
+		0 100%,
+		0 0;
+	background-size: 
+		2500px,
+		800px,
+		500px 200px,
+		1000px,
+		400px 260px;
+    animation: 50s para infinite linear;
+    
+    filter: blur(2px); */
+    position: relative;
+    height: 100%;
+    background: black;
+    overflow: hidden;
+
+    
 }
+
+$particleSize: 30vmin;
+$animationDuration: 6s;
+$amount: 20;
+.Bgpicture span {
+background-image: url(../../image/logo/logo.png);
+background-position: center;
+background-size: cover;
+  width: $particleSize;
+  height: $particleSize;
+  border-radius:2px;
+  backface-visibility: hidden;
+  position: absolute;
+  animation-name: move;
+  animation-duration: $animationDuration;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  filter: blur(5px);
+  $colors: (
+    #7c7c7c,
+    #080808,
+    #b4b4b4
+  );
+  @for $i from 1 through $amount {
+    &:nth-child(#{$i}) {
+      color: nth($colors, random(length($colors)));
+      top: random(100) * 1%;
+      left: random(100) * 1%;
+      animation-duration: (random($animationDuration * 10) / 10) * 1s + 10s;
+      animation-delay: random(($animationDuration + 10s) * 10) / 10 * -1s;
+      transform-origin: (random(50) - 25) * 1vw (random(50) - 25) * 1vh;
+      $blurRadius: (random() + 0.5) * $particleSize * 0.5;
+      $x: if(random() > 0.5, -1, 1);
+      box-shadow: ($particleSize * 2 * $x) 0 $blurRadius currentColor;
+    }
+    z-index: 1;
+    
+  }
+
+  
+}
+
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+
+@keyframes para {
+	100% {
+		background-position: 
+			-5000px 20%,
+			-800px 95%,
+			500px 50%,
+			1000px 100%,
+			400px 0;
+		}
+	}
 
 .Mention{
     position: absolute;
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0, 0.4); 
-    top: 35%;
+    background-color: rgba(0,0,0, 0.2); 
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
     font-size: 3vw;
-
-    border: 2px solid white;
+    z-index: 2;
+    border-radius: 4px;
     padding: 20px;
 
+    &::after{
+        position: absolute;
+        background: inherit; 
+        content: '';
+        box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05);
+        filter: blur(10px);
+    }
 }
 
 .Header_Menu{
+
     width: 50%;
     display: flex;
     justify-content: space-around;
@@ -47,21 +161,24 @@
     position: absolute;
     top: 1%;
 
+    font-size: 150%;
+
 }
 
 .MenuItem{
-    color:black;
+    color:rgba(255,255,255,0.5);
     transition: color 250ms ease-in-out;
     &::after{
         display: block;
         content: '';
-        border-bottom: 1px solid red;
+        border-radius: 4px;
+        border-bottom: 2px solid white;
         transform: scaleX(0);
         
         transition: transform 250ms ease-in-out;
     }
     &:hover{
-        color: red;
+        color: white;  
         &::after{
             transform: scaleX(1);
         }
