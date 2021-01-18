@@ -9,7 +9,7 @@ import Header from "../components/Structure/Header"
 import Footer from "../components/Structure/Footer"
 import Main from "../components/Structure/Content/Main"
 
-/* const BlogIndex = ({ data, location }) => {
+/*  const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
@@ -65,17 +65,18 @@ import Main from "../components/Structure/Content/Main"
       </ol>
     </Layout>
   )
-} */
+}  */
 
-const BlogIndex =()=>{
+ const BlogIndex =({ data, location })=>{
+ 
   return(
     <>
       <Header/>
-      <Main/>
+      <Main data={data}/>
       <Footer/>
     </>
   );
-}
+} 
 
 export default BlogIndex
 
@@ -96,6 +97,14 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          tags
+          featuredImage {
+            childImageSharp {
+              fluid(maxWidth: 800) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }

@@ -66,7 +66,7 @@ const BlogPostTemplate = ({ data, location }) => {
 
 export default BlogPostTemplate
 
-export const pageQuery = graphql`
+/* export const pageQuery = graphql`
   query BlogPostBySlug(
     $id: String!
     $previousPostId: String
@@ -85,6 +85,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tags
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
@@ -104,4 +105,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+` */

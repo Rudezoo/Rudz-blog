@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu } from 'antd';
+import { Menu,Divider } from 'antd';
 import '../../design/css/Header.scss'
 
 const Header_Menu=()=>{
@@ -8,16 +8,16 @@ const Header_Menu=()=>{
         <>
             <div className="Header_Menu">
                 <div className="MenuItem">
-                    one
+                    Home
                 </div>
                 <div className="MenuItem">
-                    two
+                    About
                 </div>
                 <div className="MenuItem">
-                    three
+                    Blog
                 </div>
                 <div className="MenuItem">
-                    four
+                    Contact
                 </div>
             </div>
         </>
