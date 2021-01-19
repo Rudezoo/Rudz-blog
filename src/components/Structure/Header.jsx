@@ -3,12 +3,12 @@ import '../../design/css/Header.scss'
 import Header_Banner from './Header_Banner';
 import Header_Menu from './Header_Menu';
 
-const Header=()=>{
+const Header = ({ banner ,menucolor}) => {
     return (
         <>
             <div className="Header">
-                <Header_Menu/>
-                <Header_Banner/>
+                <Header_Menu color={menucolor}/>
+                    {banner}
             </div>
         </>
     )

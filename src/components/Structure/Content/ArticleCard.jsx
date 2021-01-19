@@ -1,27 +1,32 @@
 import { formatCountdown } from "antd/lib/statistic/utils"
 
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import '../../../design/css/ArticleCard.scss'
 import Img from "gatsby-image"
 import { Card } from 'antd'
+import { Link,navigate } from "gatsby"
 
-const ArticleCard = (props) => {
+const ArticleCard = ({post}) => {
 
-    const { title, description, date, tags, image } = props
-
-
+    const { title, description, date, tags, featuredImage }=post.frontmatter
     let imagefluid;
-    if (image !== null) {
-        imagefluid = image.childImageSharp.fluid
+    if (featuredImage !== null) {
+        imagefluid = featuredImage.childImageSharp.fluid
+    }
+
+    const OnMove=(event)=>{
+        event.preventDefault();
+        navigate(post.fields.slug,{state:{post}});
     }
 
     return (
-        <>
-            <div>
-                <Card hoverable className="ArticleCard">
-                    <div>
-                        <Img fluid={imagefluid} className="ArticleImage"></Img>
-                    </div>
+        <>  
+                <Card hoverable cover={<Img fluid={imagefluid} className="ArticleImage" style={{
+                    height:"200px"
+                }}></Img>} style={{
+                    width:"300px",
+                    marginTop:"20px"
+                }} onClick={OnMove}>
                     <div className='ArticleTag'>
                         {tags}
                     </div>
@@ -35,7 +40,6 @@ const ArticleCard = (props) => {
                     </div>
                 </Card>
 
-            </div>
         </>
     )
 }

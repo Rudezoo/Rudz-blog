@@ -9,6 +9,10 @@ import Header from "../components/Structure/Header"
 import Footer from "../components/Structure/Footer"
 import Main from "../components/Structure/Content/Main"
 
+import MyLayout from "../components/MyLayOut"
+import ArticleCard from '../components/Structure/Content/ArticleCard';
+import Header_Banner from "../components/Structure/Header_Banner"
+
 /*  const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
@@ -67,16 +71,25 @@ import Main from "../components/Structure/Content/Main"
   )
 }  */
 
- const BlogIndex =({ data, location })=>{
- 
-  return(
+const BlogIndex = ({ data, location }) => {
+
+  const posts = data.allMarkdownRemark.nodes
+
+  return (
     <>
-      <Header/>
-      <Main data={data}/>
-      <Footer/>
+
+      <MyLayout location={location} banner={<div className="Header_Banner"><Header_Banner></Header_Banner></div>} menucolor="white">
+        <div className="ArticleCard" >
+          {posts.map(post => {
+            return (<div key={post.fields.slug} ><ArticleCard post={post} ></ArticleCard></div>);
+          }
+          )}
+        </div>
+
+      </MyLayout>
     </>
   );
-} 
+}
 
 export default BlogIndex
 
@@ -106,6 +119,7 @@ export const pageQuery = graphql`
             }
           }
         }
+        excerpt
       }
     }
   }

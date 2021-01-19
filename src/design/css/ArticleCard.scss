@@ -1,7 +1,12 @@
 .ArticleCard{
-    height: 30vh;
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-basis: auto;
+
+    flex-wrap: wrap;
 }
 
 .ArticleImage{
-    width: 100%;
+
 }
