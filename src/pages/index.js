@@ -77,7 +77,6 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <>
-
       <MyLayout location={location} banner={<div className="Header_Banner"><Header_Banner></Header_Banner></div>} menucolor="white">
         <div className="ArticleCard" >
           {posts.map(post => {
@@ -85,7 +84,6 @@ const BlogIndex = ({ data, location }) => {
           }
           )}
         </div>
-
       </MyLayout>
     </>
   );

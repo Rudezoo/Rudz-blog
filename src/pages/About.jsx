@@ -14,7 +14,9 @@ const About = () => {
         </div>
  */}
         <MyLayout menucolor="white" banner={<div className="AboutBanner"></div>}>
-            About
+            <div>
+                
+            </div>
         </MyLayout>
         </>
     )
