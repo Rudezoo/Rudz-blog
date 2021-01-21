@@ -1,0 +1,17 @@
+.Search{
+    margin: 10%;
+}
+
+.Search_Results{
+    
+}
+
+.ResultBox{
+    height: 100%;
+    transition: box-shadow 0.5s;
+    margin: 10px;
+    padding: 20px;
+    &:hover{
+        box-shadow: 1px 1px 5px rgba($color: #000000, $alpha: 0.5);
+    }
+}

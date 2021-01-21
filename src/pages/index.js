@@ -77,7 +77,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <>
-      <MyLayout location={location} banner={<div className="Header_Banner"><Header_Banner></Header_Banner></div>} menucolor="white">
+      <MyLayout location={location} banner={<div className="Header_Banner"><Header_Banner></Header_Banner></div>} menucolor="white"  posts={posts}>
         <div className="ArticleCard" >
           {posts.map(post => {
             return (<div key={post.fields.slug} ><ArticleCard post={post} ></ArticleCard></div>);

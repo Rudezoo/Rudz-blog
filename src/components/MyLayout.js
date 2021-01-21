@@ -7,7 +7,7 @@ import Footer from "./Structure/Footer"
 import {Divider} from 'antd'
 
 
-const MyLayout = ({ children,banner,menucolor }) => {
+const MyLayout = ({ children,banner,menucolor,posts }) => {
 
 
 /*   useEffect(()=>{

@@ -23,8 +23,8 @@ const Header_Menu=(props)=>{
         <>
             <div className="Header_Menu">
                 <Link to='/' className="MenuItem">Home</Link>
+                <Link to='/Search' className="MenuItem">Search</Link>
                 <Link to='/About' className="MenuItem">About</Link>
-                <Link to='/MenuBlog' className="MenuItem">Blog</Link>
                 <Link to='/Contact' className="MenuItem">Contact</Link>
             </div>
         </>

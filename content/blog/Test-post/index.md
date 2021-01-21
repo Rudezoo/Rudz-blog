@@ -1,6 +1,6 @@
 ---
 title: Test-post
-date: "2015-05-28T22:40:32.169Z"
+date: "2015-05-28"
 description: This is a Test post
 tags: ["Games"]
 featuredImage: "test.jpg"

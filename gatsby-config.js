@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
     title: `Rudz`,
@@ -65,12 +67,39 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/image/logo/logo.png`,
+        icon: `content/assets/image/logo.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-antd',
-    `gatsby-plugin-sass`
+    `gatsby-plugin-sass`,
+    {
+      resolve: 'gatsby-plugin-lunr',
+      
+      options: {
+        languages: [{ name: 'en'}],
+        fields: [
+          { name: 'title', store: true, attributes: { boost: 20 } },
+          { name: 'description', store: true, attributes: { boost: 5 }},
+          { name: 'content' },
+          { name: 'url', store: true },
+          { name: 'date', store: true },
+          {name : 'tags', store: true}
+        ],
+        resolvers: {
+          MarkdownRemark: {
+            title: node => node.frontmatter.title,
+            description: node => node.frontmatter.description,
+            content: node => node.rawMarkdownBody,
+            url: node => node.fields.slug,
+            date: node => node.frontmatter.date,
+            tags: node=>node.frontmatter.tags
+          },
+        },
+        filename: 'search_index.json',
+      },
+    }, 
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
