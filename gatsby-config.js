@@ -1,5 +1,12 @@
 require("dotenv").config()
 
+const myPlugin = (lunr) => (builder) => {
+  // removing stemmer
+  builder.pipeline.remove(lunr.stemmer)
+  builder.searchPipeline.remove(lunr.stemmer)
+
+}
+
 module.exports = {
   siteMetadata: {
     title: `Rudz`,
@@ -77,7 +84,7 @@ module.exports = {
       resolve: 'gatsby-plugin-lunr',
       
       options: {
-        languages: [{ name: 'en'}],
+        languages: [{ name: 'en', plugins:[myPlugin]}],
         fields: [
           { name: 'title', store: true, attributes: { boost: 20 } },
           { name: 'description', store: true, attributes: { boost: 5 }},

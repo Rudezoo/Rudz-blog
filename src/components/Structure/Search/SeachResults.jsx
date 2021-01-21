@@ -5,7 +5,7 @@ const SearchResults = ({ posts, location, query, results }) => {
 
     return (
         <>
-             {!!results.length && query &&
+            {!!results.length && query &&
                 <h2 aria-live="assertive">Found {results.length} posts on "{query}"</h2>
             }
             {!!results.length &&
