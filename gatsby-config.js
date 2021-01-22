@@ -106,6 +106,12 @@ module.exports = {
         filename: 'search_index.json',
       },
     }, 
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+          shortname: `rudz`
+      }
+    },
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

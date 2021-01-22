@@ -6,4 +6,7 @@ featuredImage: "korean.png"
 tags: ["Test"]
 ---
 
+
+![korea flag](./korean.png)
+
 한국어 검색 테스트입니다

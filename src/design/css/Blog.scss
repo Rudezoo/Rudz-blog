@@ -1,17 +1,21 @@
 .section{
     
     display: block;
-    margin: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10%;
 /*     flex-wrap: wrap;
     margin: 10%;
     justify-content: flex-start; */
+
+    font-size: 1vmax;
 }
 
 .postTitle{
     text-align: center;
     font-weight: bold;
 
-    font-size: 5vmax;
+    font-size: 3vmax;
 }
 
 .postNav{

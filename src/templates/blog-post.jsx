@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
@@ -6,8 +6,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import MyLayout from "../components/MyLayOut"
 import '../design/css/Blog.scss'
+import Utterances from "../components/Structure/Comment/Utterances"
 
-const BlogPostTemplate = ({ data, location }) => {
+const BlogPostTemplate = ({ data, location}) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
@@ -49,6 +50,7 @@ const BlogPostTemplate = ({ data, location }) => {
             </li>
           </ul>
         </nav>
+        <Utterances repo='Rudezoo/Rudz' theme='github-light' />
       </MyLayout>
     </>
 

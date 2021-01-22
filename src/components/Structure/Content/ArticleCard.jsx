@@ -28,7 +28,9 @@ const ArticleCard = ({post}) => {
                     marginTop:"20px"
                 }} onClick={OnMove}>
                     <div className='ArticleTag'>
-                        {tags}
+                        {tags.map((v,i)=>{
+                            return('['+v+']')
+                        })}
                     </div>
                     <div className="ArticleHeader">
                         {title}
