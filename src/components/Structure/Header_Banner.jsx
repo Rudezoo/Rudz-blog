@@ -1,33 +1,15 @@
 import React,{useState} from 'react';
 import '../../design/css/Header.scss'
 import image from '../../../public/icons/logo.png'
+import {Button} from 'antd'
 
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
 const Header_Banner = () => {
 
-    const [BannerText, setBannerText] = useState('Rudz');    
+    const [BannerText, setBannerText] = useState('RUDZ');    
 
     const ChangeBackground = (event) => {
-
-        const { name } = event.target;
-
-        if (name === 'smile') {
-            let temp = document.getElementsByClassName('bgimage');
-            for (let i = 0; i < temp.length; i++) {
-                temp[i].style.backgroundImage = "url('/icons/smile.png')";
-            }
-            temp = document.getElementsByClassName('Bgpicture');
-            temp[0].style.backgroundColor = 'Yellow';
-
-            temp = document.getElementsByClassName('MenuItem');
-            for (let i = 0; i < temp.length; i++) {
-                temp[i].style.color='black';
-                temp[i].style.borderColor='black';
-            }
-            
-        }
-        if (name === 'Rudz') {
             let temp = document.getElementsByClassName('bgimage');
             for (let i = 0; i < temp.length; i++) {
                 temp[i].style.backgroundImage = "url('/icons/logo.png')";
@@ -39,17 +21,23 @@ const Header_Banner = () => {
             for (let i = 0; i < temp.length; i++) {
                 temp[i].style.color='white';
             }
-        }
+    }
 
-
+    const ChangeBackgroundSMILE=()=>{
+        let temp = document.getElementsByClassName('bgimage');
+            for (let i = 0; i < temp.length; i++) {
+                temp[i].style.backgroundImage = "url('/icons/smile.png')";
+            }
+            temp = document.getElementsByClassName('Bgpicture');
+            temp[0].style.backgroundColor = 'Yellow';
     }
 
     const OnChangeText=()=>{
-        setBannerText('Welcome to Rudz!');
+        setBannerText('WELCOME TO RUDZ!');
     }
 
     const OnBackText=()=>{
-        setBannerText('Rudz');
+        setBannerText('RUDZ');
     }
 
     return (
@@ -69,8 +57,8 @@ const Header_Banner = () => {
                     </div>
                 </div>
                 <div className="ChangeButton">
-                    <button onClick={ChangeBackground} name='Rudz'>Rudz</button>
-                    <button onClick={ChangeBackground} name='smile'>smile</button>
+                    <Button onClick={ChangeBackground} ghost className="changebutton">RUDZ</Button>
+                    <Button onClick={ChangeBackgroundSMILE} ghost className="changebutton">SMILE</Button>
                 </div>
             </div>
         </>

@@ -6,7 +6,7 @@ const SearchForm = ({ query }) => {
     return (
         <>
             <form role="search" method="GET">
-                <label htmlFor="search-input"><h1>Search posts</h1></label>
+                <label htmlFor="search-input"><h1>Search</h1></label>
                 <Input
                     type="text"
                     id="search-input"

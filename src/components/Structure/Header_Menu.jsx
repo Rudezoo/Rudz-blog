@@ -22,10 +22,10 @@ const Header_Menu=(props)=>{
     return (
         <>
             <div className="Header_Menu">
-                <Link to='/' className="MenuItem">Home</Link>
-                <Link to='/Search' className="MenuItem">Search</Link>
-                <Link to='/About' className="MenuItem">About</Link>
-                <Link to='/Contact' className="MenuItem">Contact</Link>
+                <Link to='/' className="MenuItem">HOME</Link>
+                <Link to='/Search' className="MenuItem">SEARCH</Link>
+                <Link to='/About' className="MenuItem">ABOUT</Link>
+                <Link to='/Contact' className="MenuItem">CONTACT</Link>
             </div>
         </>
     )

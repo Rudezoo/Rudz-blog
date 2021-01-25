@@ -1,11 +1,12 @@
 import React from 'react'
-import {navigate} from 'gatsby'
+import { navigate } from 'gatsby'
+import { Card, Tag, Badge } from 'antd'
 
 const ResultBox = (props) => {
 
     const { title, description, date, tags, url } = props;
 
-    const OnMovePost=()=>{
+    const OnMovePost = () => {
         navigate(url);
     }
 
@@ -13,18 +14,28 @@ const ResultBox = (props) => {
         <>
             <div className="ResultBox" onClick={OnMovePost}>
                 <div >
-                    <h3>
+                    <h5 style={{
+                        fontWeight:"bold"
+                    }}>
                         {title}
-                    </h3>
-                    {tags}
+                    </h5>
+                        {tags.map((v, i) => {
+                            return (<Tag style={{
+                                marginRight: "3px"
+                            }} key={v}>{v}</Tag>)
+                        })}
+                    </div>
+                    <div style={{
+                        marginTop:"2px"
+                    }}>
+                        <Badge color="cyan" text={date}></Badge>
+                    </div>
+                    <div style={{
+                        paddingLeft:"10px"
+                    }}>
+                        {description}
+                    </div>
                 </div>
-                <div>
-                    {date}
-                </div>
-                <div>
-                    {description}
-                </div>
-            </div>
 
         </>
     );

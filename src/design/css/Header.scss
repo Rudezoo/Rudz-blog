@@ -1,3 +1,19 @@
+@font-face{
+  font-family:Slash;
+  font-style: normal;
+  src: url('../font/Slash.ttf') format('truetype');
+}
+@font-face{
+  font-family:Hoon;
+  font-style: normal;
+  src: url('../font/HoonSaemaulundongR.ttf') format('truetype');
+}
+@font-face{
+  font-family: Maddac;
+  font-style: normal;
+  src: url('../font/HoonSaemaulundongR.ttf') format('truetype');
+}
+
 @mixin dots($count) {
     $text-shadow: ();
     @for $i from 0 through $count {
@@ -11,6 +27,7 @@
   }
 
 .Header{
+    font-family: Slash;
     width: 100%;
     display: flex;
     align-items: center;
@@ -161,14 +178,16 @@ background-size: cover;
 
 .Header_Menu{
 
-    width: 70%;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     z-index:2;
     position: absolute;
-    top: 1%;
-
+    top: 0%;
+    padding: 20px;
     font-size: 1.5vmax;
+
+    background-color: black;
 
 }
 
@@ -204,8 +223,31 @@ background-size: cover;
   top: -10%;
 
   z-index: 1;
+
+  background-color: black;
+  padding: 20px;
+
+  color:white;
+
+  &>Button{
+    transition: font-size 0.5s;
+    &:hover{
+      font-size: large;
+      color: antiquewhite !important;
+      border-color: white !important;
+    }
+    &:active{
+      color: antiquewhite !important;
+      border-color: white !important;
+    }
+    &:focus{
+      color: antiquewhite !important;
+      border-color: white !important;
+    }
+  }
 }
 
 .logo2{
   width: 30%;
 }
+

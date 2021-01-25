@@ -1,5 +1,12 @@
+@font-face{
+  font-family:Noto;
+  font-style: normal;
+  src: url('../font/NotoSansKR-Regular.otf') format('opentype');
+}
+
 .section{
     
+    font-family: Noto;
     display: block;
     margin-left: 20%;
     margin-right: 20%;
@@ -7,8 +14,8 @@
 /*     flex-wrap: wrap;
     margin: 10%;
     justify-content: flex-start; */
+    font-size: 1.1vmax;
 
-    font-size: 1vmax;
 }
 
 .postTitle{
@@ -20,4 +27,12 @@
 
 .postNav{
     margin: 10%;
+}
+
+.Fetured{
+    font-weight: bold;
+    font-size: large;
+    &>div{
+        font-weight: lighter;
+    }
 }

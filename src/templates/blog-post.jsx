@@ -7,11 +7,14 @@ import SEO from "../components/seo"
 import MyLayout from "../components/MyLayOut"
 import '../design/css/Blog.scss'
 import Utterances from "../components/Structure/Comment/Utterances"
+import { Card, Tag,Button } from 'antd'
+import {FiChevronLeft,FiChevronRight} from "react-icons/fi"
 
-const BlogPostTemplate = ({ data, location}) => {
+const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
+  const Tags = post.frontmatter.tags;
 
   return (
     <>
@@ -30,25 +33,47 @@ const BlogPostTemplate = ({ data, location}) => {
               display: `flex`,
               flexWrap: `wrap`,
               justifyContent: `space-between`,
+              alignContent:"center",
               listStyle: `none`,
-              padding: 0,
+              padding: "10px",
             }}
           >
             <li>
               {previous && (
-                <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
+                <Button shape="round">
+                  <Link to={previous.fields.slug} rel="prev">
+                  <FiChevronLeft style={{
+                    paddingTop:"3px"
+                  }}/> 
+                    {/* {previous.frontmatter.title} */}이전 포스트
                 </Link>
+                </Button>
+                
               )}
             </li>
             <li>
               {next && (
-                <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
+                <Button shape="round">
+                  <Link to={next.fields.slug} rel="next">
+                  {/* {next.frontmatter.title}  */}다음 포스트<FiChevronRight style={{
+                    paddingTop:"3px"
+                  }}/>
                 </Link>
+                </Button>
+                
               )}
             </li>
           </ul>
+          <div className="Fetured">
+            Fetured Tags
+            <div>
+              {Tags.map((v, i) => {
+                return (<Tag style={{
+                  marginRight: "3px"
+                }} key={v}>{v}</Tag>)
+              })}
+            </div>
+          </div>
         </nav>
         <Utterances repo='Rudezoo/Rudz' theme='github-light' />
       </MyLayout>
