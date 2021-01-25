@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
+/* 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,8 +8,8 @@ import SEO from "../components/seo"
 import Header from "../components/Structure/Header"
 import Footer from "../components/Structure/Footer"
 import Main from "../components/Structure/Content/Main"
-
-import MyLayout from "../components/MyLayOut"
+ */
+import MyLayout from "../components/MyLayout"
 import ArticleCard from '../components/Structure/Content/ArticleCard';
 import Header_Banner from "../components/Structure/Header_Banner"
 

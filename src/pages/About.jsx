@@ -1,5 +1,5 @@
 import React from 'react'
-import MyLayout from '../components/MyLayOut'
+import MyLayout from '../components/MyLayout'
 import Header_Menu from '../components/Structure/Header_Menu'
 import '../design/css/About.scss'
 

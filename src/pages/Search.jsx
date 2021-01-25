@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import MyLayout from '../components/MyLayOut'
+import MyLayout from '../components/MyLayout'
 import { Input } from 'antd';
 import ResultBox from '../components/Structure/Search/ResultBox'
 
