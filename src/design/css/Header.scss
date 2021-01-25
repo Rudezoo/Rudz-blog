@@ -8,12 +8,6 @@
   font-style: normal;
   src: url('../font/HoonSaemaulundongR.ttf') format('truetype');
 }
-@font-face{
-  font-family: Maddac;
-  font-style: normal;
-  src: url('../font/HoonSaemaulundongR.ttf') format('truetype');
-}
-
 @mixin dots($count) {
     $text-shadow: ();
     @for $i from 0 through $count {
@@ -214,6 +208,20 @@ background-size: cover;
             transform: scaleX(1);
         }
         
+    }
+    &:active{
+      color: white;  
+        font-size: 2vmax;
+        &::after{
+            transform: scaleX(1);
+        }
+    }
+    &:focus{
+      color: white;  
+        font-size: 2vmax;
+        &::after{
+            transform: scaleX(1);
+        }
     }
 }
 
