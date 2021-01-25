@@ -2,7 +2,7 @@ import React from 'react';
 import '../../design/css/Footer.scss'
 
 import {Divider} from 'antd'
-import image from '../../../public/icons/logo.png'
+import image from '../../image/logo.png'
 const Footer=()=>{
 
     
