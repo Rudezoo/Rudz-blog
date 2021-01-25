@@ -229,23 +229,52 @@ background-size: cover;
 
   color:white;
 
-  &>Button{
-    transition: font-size 0.5s;
+}
+
+.changebutton1{
+  transition: font-size 0.5s, width 0.5s, height 0.5s;
+  margin-right: 5px;
+  border-width: 2px !important;
+  width: 80px;
+  height: 20px;
     &:hover{
+      width: 100px;
+      height: 35px;
       font-size: large;
-      color: antiquewhite !important;
+      color: white !important;
       border-color: white !important;
     }
     &:active{
-      color: antiquewhite !important;
+      color: white !important;
       border-color: white !important;
     }
     &:focus{
-      color: antiquewhite !important;
+      color: white !important;
       border-color: white !important;
     }
   }
-}
+  .changebutton2{
+    transition: font-size 0.5s,border-color 0.5s,width 0.5s, height 0.5s;
+    border-width: 2px !important;
+    width: 80px;
+    height: 20px;
+      &:hover{
+        width: 100px;
+        height: 35px;
+        font-size: large;
+        color:yellow !important;
+        border-color:yellow !important;
+      }
+      &:active{
+        color:yellow !important;
+        border-color: yellow !important;
+      }
+      &:focus{
+        color: yellow !important;
+        border-color:yellow !important;
+      }
+    }
+
 
 .logo2{
   width: 30%;

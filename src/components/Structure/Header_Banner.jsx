@@ -1,5 +1,7 @@
 import React,{useState} from 'react';
 import '../../design/css/Header.scss'
+import ImageRudz from '../../image/logo.png'
+import ImageSmile from '../../image/smile.png'
 import {Button} from 'antd'
 
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
@@ -11,7 +13,7 @@ const Header_Banner = () => {
     const ChangeBackground = (event) => {
             let temp = document.getElementsByClassName('bgimage');
             for (let i = 0; i < temp.length; i++) {
-                temp[i].style.backgroundImage = "url('/icons/logo.png')";
+                temp[i].style.backgroundImage = `url(${ImageRudz})`;
             }
             temp = document.getElementsByClassName('Bgpicture');
             temp[0].style.backgroundColor = 'rgb(78, 78, 78)';
@@ -25,7 +27,7 @@ const Header_Banner = () => {
     const ChangeBackgroundSMILE=()=>{
         let temp = document.getElementsByClassName('bgimage');
             for (let i = 0; i < temp.length; i++) {
-                temp[i].style.backgroundImage = "url('/icons/smile.png')";
+                temp[i].style.backgroundImage = `url(${ImageSmile})`;
             }
             temp = document.getElementsByClassName('Bgpicture');
             temp[0].style.backgroundColor = 'Yellow';
@@ -56,8 +58,9 @@ const Header_Banner = () => {
                     </div>
                 </div>
                 <div className="ChangeButton">
-                    <Button onClick={ChangeBackground} ghost className="changebutton">RUDZ</Button>
-                    <Button onClick={ChangeBackgroundSMILE} ghost className="changebutton">SMILE</Button>
+                    <Button onClick={ChangeBackground} ghost className="changebutton1">RUDZ</Button>
+                    
+                    <Button onClick={ChangeBackgroundSMILE} ghost className="changebutton2">SMILE</Button>
                 </div>
             </div>
         </>
